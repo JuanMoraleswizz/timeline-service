@@ -1,0 +1,19 @@
+server:
+  port: 8081
+db:
+  host: 127.0.0.1
+  port: 13336
+  user: root
+  password: root
+  dbname: reto
+  charset: utf8mb4
+redis:
+  host: localhost
+  port: 16379
+  password: ""
+  db: 0
+rabbit:
+  host: localhost
+  port: 5672
+  password: retopass
+  user: reto
