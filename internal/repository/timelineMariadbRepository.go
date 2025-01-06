@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"time"
 
 	"uala.com/timeline-service/internal/database"
 	"uala.com/timeline-service/internal/entity"
@@ -78,7 +79,7 @@ func (r *TimelineMariadbRepository) GetTimeline(user int32, forceSync bool) ([]e
 		fmt.Println("")
 
 	}
-	r.redis.GetRedis().Set(ctxa, fmt.Sprintf("user:%d", user), jsonBytes, 0)
+	r.redis.GetRedis().Set(ctxa, fmt.Sprintf("user:%d", user), jsonBytes, 60*time.Second)
 
 	return timeline, nil
 }
